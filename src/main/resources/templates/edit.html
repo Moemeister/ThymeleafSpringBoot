@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit</title>
+</head>
+<body>
+    <form th:action="@{/save}" th:object="${students}" method="post">
+        <input type="hidden" name="id_student" th:field="*{id_student}">
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" th:field="*{s_name}"><br>
+        <label for="lname">Apellido: </label>
+        <input type="text" name="name" th:field="*{s_lname}"><br>
+        <label for="age">Edad: </label>
+        <input type="number" name="age" th:field="*{s_age}"><br>
+        <label for="status">Estado</label>
+        <input type="radio" name="status" value="true" th:field="*{b_active}">Activo
+        <input type="radio" name="status" value="false" th:field="*{b_active}">Inactivo
+        <input type="submit" value="Enviar">
+
+    </form>
+</body>
+</html>
